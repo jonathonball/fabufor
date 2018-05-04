@@ -1,3 +1,6 @@
+# Purpose
+Will slowly strobe a Luxafor light from a random target color to another random color, one after another.
+
 # Installation
 Using Ubuntu:
 
