@@ -1,0 +1,15 @@
+{
+  "name": "jlight",
+  "version": "0.0.1",
+  "description": "Fabulous app for your Luxafor light",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jon Ball",
+  "license": "MIT",
+  "dependencies": {
+    "color-namer": "^1.3.0",
+    "luxafor": "^1.1.1"
+  }
+}
