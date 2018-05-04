@@ -12,3 +12,9 @@ $ cd your-install-dir
 $ npm install
 $ node . --debug
 ```
+
+# Usage
+```
+$ cd your-install-dir
+$ node index.js --debug
+```
