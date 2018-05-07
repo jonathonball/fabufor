@@ -10,6 +10,7 @@
   "license": "MIT",
   "dependencies": {
     "color-namer": "^1.3.0",
-    "luxafor": "^1.1.1"
+    "luxafor": "^1.1.1",
+    "stats-lite": "^2.1.1"
   }
 }

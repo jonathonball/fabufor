@@ -1,6 +1,7 @@
 const lux = require('luxafor')();
 const namer = require('color-namer');
 const EventEmitter = require('events');
+const stats = require('stats-lite');
 
 class LuxColor extends EventEmitter {
 
@@ -37,15 +38,25 @@ class LuxColor extends EventEmitter {
         this.targetB = this._random(255);
         this.targetCode = this._rgbString(this.targetR, this.targetG, this.targetB);
         this.targetName = this._colorName(this.targetR, this.targetG, this.targetB);
+        this._checkTargeting();
+    }
+
+    _checkTargeting() {
+        let stdev = stats.stdev([this.targetR, this.targetG, this.targetB]);
+        if (stdev < 50) {
+            this.retarget();
+        }
+    }
+
+    _percentRemain(current, target) {
+        [current, target] = (current > target) ? [target, current] : [current, target];
+        let diff = Math.floor(Math.abs(target - current));
+        if (diff < 3) return 0;
+        return Math.floor((100 * diff) / target);
     }
 
     _move(current, target) {
-        [current, target] = (current > target) ? [target, current] : [current, target];
-        let diff = Math.floor(Math.abs(target - current));
-        if (diff < 5) {
-            return 1;
-        }
-        let percentLeftToMove = Math.floor((100 * diff) / target);
+        let percentLeftToMove = this._percentRemain(current, target);
         switch (true) {
             case (percentLeftToMove > 90):
                 return 8;
