@@ -86,11 +86,17 @@ class LuxColor extends EventEmitter {
     }
 
     update() {
-        this.r = this._update(this.r, this.targetR);
-        this.g = this._update(this.g, this.targetG);
-        this.b = this._update(this.b, this.targetB);
+        this.r = this._clamp(this._update(this.r, this.targetR));
+        this.g = this._clamp(this._update(this.g, this.targetG));
+        this.b = this._clamp(this._update(this.b, this.targetB));
         this.name = this._colorName(this.r, this.g, this.b);
         this.code = this._rgbString(this.r, this.g, this.b);
+    }
+
+    _clamp(n) {
+        if (n < 0) return 0;
+        if (n > 255) return 255;
+        return n;
     }
 
     upToDate() {
