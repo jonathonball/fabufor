@@ -16,5 +16,15 @@ $ node . --debug
 # Usage
 ```
 $ cd your-install-dir
-$ node index.js --debug
+$ ./start.sh --debug
 ```
+
+# Command line options
+## `--version`
+Show version number and exit
+## `--verbose`, `v`
+Show color information on STDOUT
+## `--color`, `-c`
+Set light using the name of an HTML color
+## `--rgb`
+Set light using three space separated RGB integer values

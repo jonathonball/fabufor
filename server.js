@@ -9,12 +9,12 @@ const yargs = require('yargs')
     })
     .option('color', {
         alias: 'c',
-        describe: 'The name of a color',
+        describe: 'Set light using the name of an HTML color',
         type: 'string',
         conflicts: 'rgb'
     })
     .option('rgb', {
-        describe: 'Three integers describing a color',
+        describe: 'Set light using three space separated RGB integer values',
         type: 'number',
         nargs: 3,
         conflicts: 'color'
