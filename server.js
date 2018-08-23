@@ -30,13 +30,21 @@ if (yargs.color) {
     let userColor = luxColor.colorNameToRgb(yargs.color);
     userRgb = hexRgb(userColor.hex);
 }
+if (yargs.rgb) {
+    userRgb = {
+        red: yargs.rgb[0],
+        green: yargs.rgb[1],
+        blue: yargs.rgb[2]
+    }
+}
 
 lux.init(() => {
-    if (yargs.verbose) {
-        console.log("Setting color to " + userColor.name);
-    }
     if (userRgb) {
         lux.setColor(userRgb.red, userRgb.green, userRgb.blue);
+        if (yargs.verbose) {
+            console.log("Setting color to " + userColor.name);
+        }
+        process.exit();
     } else {
         lux.setColor(luxColor.r, luxColor.g, luxColor.b);
     }
