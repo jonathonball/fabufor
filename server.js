@@ -1,4 +1,4 @@
-const lux = require('luxafor')();
+const lux = require('node-luxafor2')();
 const LuxColor = require('./lib/lux-color');
 const hexRgb = require('hex-rgb');
 const yargs = require('yargs')
@@ -52,7 +52,7 @@ if (yargs.sequence) {
 
 lux.init(() => {
     if (userRgb) {
-        lux.setColor(userRgb.red, userRgb.green, userRgb.blue);
+        lux.color(lux.API.LED.ALL, userRgb.red, userRgb.green, userRgb.blue);
         if (yargs.verbose) {
             console.log("Setting color to " + userColor.name);
         }
@@ -61,13 +61,13 @@ lux.init(() => {
     if (yargs.sequence) {
         luxColor.sequence();
     } else {
-        lux.setColor(luxColor.r, luxColor.g, luxColor.b);
+        lux.color(lux.API.LED.ALL, luxColor.r, luxColor.g, luxColor.b);
         luxColor.randomSequence();
     }
 });
 
 luxColor.on('time', () => {
-    lux.setColor(luxColor.r, luxColor.g, luxColor.b);
+    lux.color(lux.API.LED.ALL, luxColor.r, luxColor.g, luxColor.b);
     if (yargs.verbose) {
         luxColor.debug();
     }
