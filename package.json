@@ -1,12 +1,12 @@
 {
-  "name": "jlight",
-  "version": "0.0.3",
-  "description": "Fabulous app for your Luxafor light",
-  "main": "server.js",
+  "name": "fabufor",
+  "version": "0.0.4",
+  "description": "Fabulous front-end for controlling your Luxafor light",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Jon Ball",
+  "author": "Jonathon Ball <jonathon.ball@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "color-namer": "^1.3.0",
