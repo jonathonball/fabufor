@@ -1,6 +1,5 @@
 const {Luxafor} = require('node-luxafor2');
 const luxafor = new Luxafor();
-const tinycolor = require('tinycolor2');
 const yargs = require('./lib/yargs');
 const Actions = require('./lib/actions');
 
