@@ -25,10 +25,15 @@ if (yargs.preset) {
     Actions.Actions.requireColor(yargs);
     Action = new Actions.Strobe();
 } else if (yargs.wave) {
-    Actions.Actions.requireColor(yargs);
     Action = new Actions.Wave();
 } else if (yargs.pattern) {
     Action = new Actions.Pattern();
+} else {
+    if (yargs.fade) {
+        Actions.Actions.notifyExit('Not implemented');
+    } else {
+        Action = new Actions.Color();
+    }
 }
 
 if (Action) {
