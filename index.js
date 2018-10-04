@@ -30,7 +30,7 @@ if (yargs.preset) {
     Action = new Actions.Pattern();
 } else {
     if (yargs.fade) {
-        Actions.Actions.notifyExit('Not implemented');
+        Action = new Actions.ColorFade();
     } else {
         Action = new Actions.Color();
     }
