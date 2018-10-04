@@ -15,9 +15,6 @@ if (userColor) {
 if (yargs.color && Actions.Actions.isBlack(yargs)) {
     console.warn("Warning: You specified a color but the result was black.");
 }
-if (yargs.red === undefined || yargs.green === undefined || yargs.blue === undefined) {
-    Actions.Actions.notifyExit('No color provided.');
-}
 
 luxafor.init();
 var Action = null;
@@ -25,13 +22,17 @@ var Action = null;
 if (yargs.preset) {
     Action = new Actions.Preset();
 } else if (yargs.strobe) {
+    Actions.Actions.requireColor(yargs);
     Action = new Actions.Strobe();
 } else if (yargs.wave) {
+    Actions.Actions.requireColor(yargs);
     Action = new Actions.Wave();
+} else if (yargs.pattern) {
+    Action = new Actions.Pattern();
 }
 
 if (Action) {
     Action.go(luxafor, yargs);
 } else {
-    Actions.notifyExit('No action was specified.');
+    Actions.Actions.notifyExit('No action was specified.');
 }
