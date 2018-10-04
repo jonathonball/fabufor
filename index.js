@@ -28,6 +28,10 @@ if (yargs.preset) {
     Action = new Actions.Wave();
 } else if (yargs.pattern) {
     Action = new Actions.Pattern();
+} else if (yargs.sequence) {
+    Actions.Actions.notifyExit('Sequence not implemented');
+} else if (yargs.random) {
+    Actions.Actions.notifyExit('Random sequence not implemented.');
 } else {
     if (yargs.fade) {
         Action = new Actions.ColorFade();
