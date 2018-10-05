@@ -1,6 +1,6 @@
 {
   "name": "fabufor",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Fabulous front-end for controlling your Luxafor light",
   "main": "index.js",
   "scripts": {
@@ -22,6 +22,6 @@
     "yargs": "^12.0.1"
   },
   "bin": {
-      "fabufor": "index.js"
+    "fabufor": "index.js"
   }
 }
