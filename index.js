@@ -1,19 +1,15 @@
+#!/usr/bin/env node
+
 const {Luxafor} = require('node-luxafor2');
 const luxafor = new Luxafor();
 const yargs = require('./lib/yargs');
 const Actions = require('./lib/actions');
-const tinycolor = require('tinycolor2');
 
-let userColor = yargs.color;
-if (userColor) {
-    userColor = tinycolor(yargs.color).toRgb();
-    yargs.red = yargs.r = userColor.r;
-    yargs.green = yargs.g = userColor.g;
-    yargs.blue = yargs.b = userColor.b;
-}
-
-if (yargs.color && Actions.Actions.isBlack(yargs)) {
-    console.warn("Warning: You specified a color but the result was black.");
+if (yargs.color) {
+    let namedColor = Actions.Actions.getUserColor(yargs.color);
+    yargs.red = yargs.r = namedColor._r;
+    yargs.green = yargs.g = namedColor._g;
+    yargs.blue = yargs.b = namedColor._b;
 }
 
 luxafor.init();
@@ -22,7 +18,6 @@ var Action = null;
 if (yargs.preset) {
     Action = new Actions.Preset();
 } else if (yargs.strobe) {
-    Actions.Actions.requireColor(yargs);
     Action = new Actions.Strobe();
 } else if (yargs.wave) {
     Action = new Actions.Wave();
