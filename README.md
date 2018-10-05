@@ -1,13 +1,16 @@
 # Purpose
-Fabulous front-end for using module node-luxafor2.
+Fabulous front-end for controlling a Luxafor light via node-luxafor2 in node.js.
 
 # Installation
-Using Ubuntu:
-
+As mentioned in the MIT license, you run these commands at your own risk.
+## Using Ubuntu:
 ```
-$ sudo apt-get install libusb-dev libudev-dev
-$ sudo echo 'SUBSYSTEMS=="usb", ATTRS{idVendor}=="04d8", ATTRS{idProduct}=="f372" MODE="0666"' > /etc/udev/rules.d/99_luxafor.rules
-$ sudo reboot
+$ sudo apt update && sudo apt upgrade
+$ sudo apt install libusb-dev libudev-dev
+$ sudo su -
+$ echo 'SUBSYSTEMS=="usb", ATTRS{idVendor}=="04d8", ATTRS{idProduct}=="f372" MODE="0666"' > /etc/udev/rules.d/99_luxafor.rules
+$ yarn global add fabufor --prefix /usr/local
+$ reboot
 ```
 
 # Usage
@@ -38,4 +41,16 @@ Modes:
 Options:
   --version   Show version number                                      [boolean]
   -h, --help  Show help                                                [boolean]
+```
+
+# Examples
+```
+# wave red 5 times
+fabufor --wave UNKNOWN_1 --color red --repeat 5 --speed 10
+
+# strobe teal 5 times
+fabufor --strobe --color teal --led ALL --time 10 --repeat 5
+
+# set the entire light to blue
+fabufor --led ALL --color blue
 ```
