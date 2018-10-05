@@ -9,8 +9,10 @@ $ sudo apt update && sudo apt upgrade
 $ sudo apt install libusb-dev libudev-dev
 $ sudo su -
 $ echo 'SUBSYSTEMS=="usb", ATTRS{idVendor}=="04d8", ATTRS{idProduct}=="f372" MODE="0666"' > /etc/udev/rules.d/99_luxafor.rules
-$ yarn global add fabufor --prefix /usr/local
 $ reboot
+$ yarn add global fabufor
+# or
+$ npm install -g fabufor
 ```
 
 # Usage
