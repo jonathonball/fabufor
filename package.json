@@ -6,11 +6,22 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [
+    "luxafor",
+    "usb"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:jonathonball/fabufor.git"
+  },
   "author": "Jonathon Ball <jonathon.ball@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "node-luxafor2": "^1.0.1",
     "tinycolor2": "^1.4.1",
     "yargs": "^12.0.1"
+  },
+  "bin": {
+      "fabufor": "index.js"
   }
 }
