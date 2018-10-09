@@ -15,6 +15,19 @@ $ yarn add global fabufor
 $ npm install -g fabufor
 ```
 
+## Using Fedora:
+```
+$ sudo dnf install systemd-devel
+$ sudo su -
+# echo 'SUBSYSTEMS=="usb", ATTRS{idVendor}=="04d8", ATTRS{idProduct}=="f372" MODE="0666"' > /etc/udev/rules.d/99_luxafor.rules
+# udevadm control --reload
+# udevadm trigger
+# exit
+$ yarn add global fabufor
+ -- OR --
+$ npm install -g fabufor
+```
+
 # Usage
 ```
 Lighting:
