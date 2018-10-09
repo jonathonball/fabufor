@@ -27,6 +27,8 @@ if (yargs.preset) {
     Actions.Actions.notifyExit('Sequence not implemented');
 } else if (yargs.random) {
     Actions.Actions.notifyExit('Random sequence not implemented.');
+} else if (yargs.flicker) {
+    Action = new Actions.Flicker();
 } else {
     if (yargs.fade) {
         Action = new Actions.ColorFade();
