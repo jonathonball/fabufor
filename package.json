@@ -1,6 +1,6 @@
 {
   "name": "fabufor",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Fabulous front-end for controlling your Luxafor light",
   "main": "index.js",
   "scripts": {
