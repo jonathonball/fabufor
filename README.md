@@ -17,7 +17,7 @@ $ npm install -g fabufor
 
 ## Using Fedora:
 ```
-$ sudo dnf install systemd-devel
+$ sudo dnf install systemd-devel gcc-c++
 $ sudo su -
 # echo 'SUBSYSTEMS=="usb", ATTRS{idVendor}=="04d8", ATTRS{idProduct}=="f372" MODE="0666"' > /etc/udev/rules.d/99_luxafor.rules
 # udevadm control --reload
