@@ -30,8 +30,7 @@ $ npm install -g fabufor
 
 # Usage
 ```
-Lighting:
-  --led, -l  Which light to control                                     [string]
+Lighting:                                              [string] [default: "all"]
 
 Color Controls:
   --red, -r     Red component                                           [number]
